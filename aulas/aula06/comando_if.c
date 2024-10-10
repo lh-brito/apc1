@@ -21,26 +21,15 @@ int main() {
     // else printf("Voce eh obrigado a votar!\n");
 
     float media = 0.0f;
-    printf("Digite sua media: ");
+    printf("\e[1;1H\e[2JDigite sua media: ");
     int deu_certo = scanf("%f", &media);
 
-    if (media >= 9.0f && media <= 10.0f) { 
-        printf("A sua media eh %f e a mencao eh SS\n", media); 
-    } else if (media >= 7.0f && media <= 8.9f) { 
-        printf("A sua media eh %f e a mencao eh MS\n", media); 
-    }
-    else if (media >= 5.0f && media <= 6.9f) { 
-        printf("A sua media eh %f e a mencao eh MM\n", media); 
-    }
-    else if (media >= 3.0f && media <= 4.9f) { 
-        printf("A sua media eh %f e a mencao eh MI\n", media);  
-    }
-    else if (media >= 0.1f && media <= 2.9f) { 
-        printf("A sua media eh %f e a mencao eh II\n", media); 
-    }
-    else { 
-        printf("A sua media eh %f e a mencao eh SR\n", media);  
-    }
+    if (media >= 9.0f && media <= 10.0f) printf("A sua media eh %.1f e a mencao eh SS\n", media); 
+    else if (media >= 7.0f && media <= 8.9f) printf("A sua media eh %.1f e a mencao eh MS\n", media); 
+    else if (media >= 5.0f && media <= 6.9f) printf("A sua media eh %.1f e a mencao eh MM\n", media); 
+    else if (media >= 3.0f && media <= 4.9f) printf("A sua media eh %.1f e a mencao eh MI\n", media);  
+    else if (media >= 0.1f && media <= 2.9f) printf("A sua media eh %.1f e a mencao eh II\n", media); 
+    else printf("A sua media eh %.1f e a mencao eh SR\n", media);  
 
     // if encadeado
     // if (media >= 9.0f && media <= 10.0f) {
