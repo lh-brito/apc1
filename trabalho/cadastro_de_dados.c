@@ -1,19 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 
 int main () {
   int menu, menu_flag = 0;
-  char clean_console [12] = "\e[1;1H\e[2J", valid_option [36] = "\e[1;1H\e[2JDigite uma opcao valida.";
-  printf(clean_console);
+  char valid_option [25] = "Digite uma opcao valida.";
+  system("clear");
   
   do {
     printf("Digite a opcao que deseja fazer:\n1 - Cadastrar\n2 - Sair do sistema\nOpcao: ");
     scanf("%d", &menu);
-    getchar();
+    while (getchar() != '\n'); // Limpar buffer do teclado
 
     switch(menu) {
         case 1:
-          printf("Opcao selecionada: Cadastrar");
+          printf("\nOpcao selecionada: Cadastrar");
 
           char sex, name [30], sex_string [50] = "\nDigite M para masculino e F para feminino: ";
           int age = 0, sex_flag = 0;
@@ -23,7 +24,7 @@ int main () {
 
           printf("\nQual seu sexo?");
           do {
-            getchar();
+            while (getchar() != '\n'); // Limpar buffer do teclado
             printf(sex_string);
             scanf("%c", &sex);
             sex = toupper(sex);
@@ -47,6 +48,7 @@ int main () {
           int confirmation_flag = 0;
           
           while (confirmation_flag == 0) {
+            getchar();
             printf("\nDigite Y para Sim e N para Nao: ");
             char confirmation;
             scanf("%c", &confirmation);
@@ -68,8 +70,8 @@ int main () {
           break;
       
         default:
-          printf(valid_option);
-          break;
+          system("clear");
+          printf("%s\n", valid_option);
     }
   } while(menu_flag == 0);
 
