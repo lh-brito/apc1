@@ -15,8 +15,7 @@ int main() {
     numeros[9] = 10;
     // numeros[10] = 11; NAUM PODE!!!
 
-    for (int i = 0; i < 10; i += 1)
-        printf("%d%c ", numeros[i], i == 9 ? '.' : ',');
+    for (int i = 0; i < 10; i += 1) printf("%d%c ", numeros[i], i == 9 ? '.' : ',');
 
     return 0;
 }

@@ -29,9 +29,8 @@ int main() {
     matriz[4][1] = 14;
     matriz[4][2] = 15;
 
-    for (int i = 0; i < 5; i += 1){
-      for (int j = 0; j < 3; j += 1)
-        printf("%d%c ", matriz[i][j], i == 4 && j == 2 ? '.' : ',');
+    for (int i = 0; i < 5; i += 1) {
+      for (int j = 0; j < 3; j += 1) printf("%d%c ", matriz[i][j], i == 4 && j == 2 ? '.' : ',');
       printf("\n");
     }
 
