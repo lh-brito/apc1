@@ -14,17 +14,26 @@ int main()
 
   struct usuario_t usuario;
 
-  struct usuario_t usuarios[4];
-
   int menu, menu_flag = 0, id = 0;
   char valid_option[25] = "Digite uma opcao valida.";
+
+  int limite = 2;
+  system("clear");
+  printf("Digite abaixo o valor limite de usuarios que devem ser cadastrados no sistema.");
+  do {
+    printf("\nDigite um valor a partir de 2. Valor limite: ");
+    scanf("%i", &limite);
+  } while (limite < 2);
+
+  struct usuario_t usuarios[limite + 1];
 
   do
   {
     system("clear");
-    printf("Digite a opcao que deseja fazer:\n");
+    printf("Valor limite de usuarios que podem ser cadastrados no sistema: %i\n", limite);
+    printf("Digite a opcao que deseja realizar:\n");
     printf("1 - Cadastrar usuario\n");
-    printf("2 - Listar usuarios\n");
+    printf("2 - Listar usuarios cadastrados\n");
     printf("3 - Sair do sistema\n");
     printf("Opcao: ");
     scanf("%i", &menu);
@@ -33,7 +42,7 @@ int main()
     switch (menu)
     {
     case 1:
-      if (id >= 3)
+      if (id >= limite)
       {
         system("clear");
         printf("Limite de cadastro de usuarios alcancado.");
@@ -115,6 +124,9 @@ int main()
       break;
 
     case 2:
+      system("clear");
+      printf("Opcao selecionada: Listar usuarios cadastrados\n");
+      printf("Quantidade de usuarios cadastrados: %i\n", id);
       for (int i = 1; i <= id; i += 1)
       {
         printf("\n========= Dados do usuario %i =========\n", i);
